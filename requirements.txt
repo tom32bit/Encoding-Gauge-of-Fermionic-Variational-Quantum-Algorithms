@@ -1,0 +1,7 @@
+# Core dependencies for the encoding-gauge reproducibility package.
+# Tested with Python 3.12; openfermion 1.7.1.
+numpy>=1.23
+scipy>=1.9
+matplotlib>=3.6
+openfermion>=1.6
+joblib>=1.2          # parallel sweeps in the Kaggle scaling notebooks

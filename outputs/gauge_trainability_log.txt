@@ -1,0 +1,51 @@
+7.8s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.8s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.8s 3 0.00s - to python to disable frozen modules.
+7.8s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.4s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.4s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.4s 7 0.00s - to python to disable frozen modules.
+8.4s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+13.1s 9 [?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/44.7 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.2/44.7 MB[0m [31m166.1 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10.5/44.7 MB[0m [31m166.5 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14.7/44.7 MB[0m [31m140.2 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━[0m [32m20.5/44.7 MB[0m [31m137.7 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m24.3/44.7 MB[0m [31m130.9 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━[0m [32m28.3/44.7 MB[0m [31m123.9 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━[0m [32m33.5/44.7 MB[0m [31m124.9 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━[0m [32m39.8/44.7 MB[0m [31m167.9 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━[0m [32m42.7/44.7 MB[0m [31m132.7 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m138.6 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m138.6 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m138.6 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m138.6 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m138.6 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m44.7/44.7 MB[0m [31m39.1 MB/s[0m eta [36m0:00:00[0m
+13.2s 10 [?25h[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/2.0 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.0/2.0 MB[0m [31m71.2 MB/s[0m eta [36m0:00:00[0m
+24.1s 11 [?25hengine loaded. CPU cores: 4
+25.0s 12 [PASS] engine == statevector
+25.0s 13 [PASS] dense DLA == su(5)=24, all encodings
+25.0s 14 [PASS] sparse DLA == dense (free n=5, int n=4)
+25.0s 15 [PASS] magic SRE: T-state==log2(4/3), stabilizer==0
+25.0s 16 [PASS] gradient vector identical across encodings (<1e-9)
+25.0s 17 
+25.0s 18 >>> all 5 checks PASSED: engine + gradient invariance certified on this machine.
+25.0s 19 
+39.6s 20 n   dim g   n^2-1   JW weight
+39.6s 21 4   15      15      4
+39.6s 22 6   35      35      6
+39.6s 23 8   63      63      8
+39.6s 24 10  99      99      10
+39.6s 25 12  143     143     12
+39.6s 26 14  195     195     14
+39.6s 27 16  255     255     16
+39.6s 28 18  323     323     18
+39.6s 29 20  399     399     20
+39.8s 30 22  483     483     22
+39.8s 31 24  575     575     24
+41.1s 32 invariance check (Var ratio JW/BK should be exactly 1):
+48.9s 33 free        n=4  ratio=1.000000
+72.8s 34 free        n=6  ratio=1.000000
+125.0s 35 free        n=8  ratio=1.000000
+143.1s 36 interacting n=4  ratio=1.000000
+194.3s 37 interacting n=6  ratio=1.000000
+309.1s 38 interacting n=8  ratio=1.000000
+3472.5s 39 
+3472.5s 40 free-fermion Var*dim_g (constant => Var ~ 1/dim g): ['0.83', '1.46', '1.61', '1.28', '1.46', '1.44', '1.10']
+3477.3s 41 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+3477.3s 42 cells[i][c] = re.sub('\\\\\|', '|', cell)
+3477.5s 43 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+3477.5s 44 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+3478.1s 45 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+3478.4s 46 [NbConvertApp] Writing 140443 bytes to __notebook__.ipynb
+3480.7s 47 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+3481.7s 48 [NbConvertApp] Support files will be in __results___files/
+3481.7s 49 [NbConvertApp] Making directory __results___files
+3481.7s 50 [NbConvertApp] Making directory __results___files
+3481.7s 51 [NbConvertApp] Writing 388027 bytes to __results__.html

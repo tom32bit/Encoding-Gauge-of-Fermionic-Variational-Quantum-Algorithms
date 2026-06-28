@@ -1,0 +1,18 @@
+######## invariance check: Var[grad] ratio JW/BK (should be 1.000000) ########
+  free         n=4  Var(JW)=8.1930e-02  Var(BK)=8.1930e-02  ratio=1.000000
+  free         n=6  Var(JW)=4.5633e-02  Var(BK)=4.5633e-02  ratio=1.000000
+  free         n=8  Var(JW)=2.6077e-02  Var(BK)=2.6077e-02  ratio=1.000000
+  interacting  n=4  Var(JW)=6.4422e-02  Var(BK)=6.4422e-02  ratio=1.000000
+  interacting  n=6  Var(JW)=3.1204e-02  Var(BK)=3.1204e-02  ratio=1.000000
+  interacting  n=8  Var(JW)=2.0660e-02  Var(BK)=2.0660e-02  ratio=1.000000
+
+######## SCALING: Var[grad] vs n (Jordan-Wigner; identical in any encoding) ########
+model        n    | Var[grad]    | dim g         
+free         4    | 8.19296e-02  | 15            
+free         6    | 4.56327e-02  | 35            
+free         8    | 2.60770e-02  | 63            
+free         10   | 1.47958e-02  | 99            
+free         12   | 1.13527e-02  | 143           
+
+interacting  4    | 6.44221e-02  | 66            
+interacting  6    | 3.12036e-02  | 918           

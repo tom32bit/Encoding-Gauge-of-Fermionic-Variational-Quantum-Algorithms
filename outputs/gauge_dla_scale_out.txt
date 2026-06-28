@@ -1,0 +1,20 @@
+######## validation: sparse Pauli DLA == dense matrix DLA ########
+  n=4 free         sparse=15    dense=15     OK
+  n=4 interacting  sparse=66    dense=66     OK
+  n=5 free         sparse=24    dense=24     OK
+  n=5 interacting  sparse=247   dense=247    OK
+  free-fermion sparse dim identical across JW/BK/parity: True
+  [validated]
+
+######## SCALING: free-fermion dim g (su(n)=n^2-1, poly) vs JW weight (=n), at scale ########
+n    | dim g      expected   | JW weight 
+4    | 15         15         | 4         
+6    | 35         35         | 6         
+8    | 63         63         | 8         
+10   | 99         99         | 10        
+12   | 143        143        | 12        
+14   | 195        195        | 14        
+16   | 255        255        | 16        
+18   | 323        323        | 18        
+20   | 399        399        | 20        
+=> dim g = n^2-1 (polynomial, gauge-invariant) while JW weight = n: the floor holds at scale.
