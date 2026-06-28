@@ -65,6 +65,8 @@ python make_figs.py           # regenerates Figures 3, 5, 7 into figures/
 | **Fig. 7** (trainability is gauge-invariant) | `make_figs.py` | Var ∝ 1/dim g; data in `outputs/gauge_trainability_log.txt` |
 | **Table 1** (molecular instance) | `gauge_molecules.py` | H2 STO-3G and 6-31G, JW/BK/parity |
 | **Floor, both invariant routes (Section 5)** | `gauge_floor.py`, `gauge_magic_route.py` | Lie-algebra route + magic (Clifford-locus) route |
+| **Family that achieves the floor (Prop., Sec. 5)** | `gauge_floor_family.py` | H(λ): dim g = n²−1 at λ=0 (poly) vs 66, 918 at λ≠0 (super-poly); JW weight n vs BK < n; generic magic 1.65→2.66 — all three certificates fail at once |
+| **Faithfulness / tapering boundary (Prop., Sec. 6)** | `gauge_tapering.py` | re-encoding preserves dim g (faithful); sector tapering drops it for the interacting ansatz (66→36, 918→400) but not the Gaussian one — the exact "iff faithful" boundary |
 | **W\* flip window (operating point)** | `gauge_sweep.py` | shows the JW-hard / BK-simulable window on H2/6-31G |
 | **Gradient-variance scaling (Section 6, App. A)** | `gauge_var_scale.py`, `gauge_var_interacting.py` | Var·dim g constant for free fermions |
 | **DLA dimension at scale** | `gauge_dla_scale.py` | sparse Pauli Lie-closure, dim g = n²−1 to n = 24 |
