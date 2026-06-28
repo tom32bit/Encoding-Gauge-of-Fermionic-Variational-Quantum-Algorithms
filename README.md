@@ -74,8 +74,8 @@ python make_figs.py           # regenerates Figures 3, 5, 7 into figures/
 | `gauge_molecules.py` | molecular Hamiltonians, per-encoding Hartree–Fock reference, circuit-level W\* |
 | `gauge_trainability.py` | gradients and the barren-plateau variance diagnostic |
 | `gauge_dla_scale.py` | sparse Lie-closure over Pauli strings |
-| `bpfree/pauli.py` | truncated Pauli (Heisenberg) propagation — the weight-controlled simulator |
-| `bpfree/statevec.py` | exact statevector reference (independent ground truth) |
+| `gauge_engine/pauli.py` | truncated Pauli (Heisenberg) propagation — the weight-controlled simulator |
+| `gauge_engine/statevec.py` | exact statevector reference (independent ground truth) |
 
 ### Heavy / asymptotic runs (Kaggle)
 
@@ -98,7 +98,7 @@ checks before producing any scaling data.
 ├── validate_gauge.py            # run first: 9/9 ground-truth checks
 ├── gauge_*.py                   # core library + demonstration scripts
 ├── make_*.py                    # figure and notebook generators
-├── bpfree/                      # numpy-only engine (pauli + statevec) used by the gauge code
+├── gauge_engine/                # numpy-only engine (pauli + statevec) used by the gauge code
 ├── notebooks/                   # Kaggle scaling notebooks
 ├── figures/                     # the seven paper figures (png + pdf)
 ├── outputs/                     # logged numerical outputs underlying the figures/tables

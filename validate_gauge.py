@@ -9,7 +9,7 @@ from openfermion import FermionOperator, get_fermion_operator
 from gauge_micro import encode, dense, dla_dim, two_sre, free_fermion_chain, ENC
 from gauge_molecules import (load_mol, hf_index, hermitian_gens, circuit, exact_O,
                              exp_basis, wstar_hf, qop_to_terms, DATA)
-from bpfree.pauli import propagate_circuit
+from gauge_engine.pauli import propagate_circuit
 
 RESULTS = []
 

@@ -5,7 +5,7 @@ A gate is exp(-i theta G_herm) with G_herm the HERMITIAN Pauli encoded by (x, z)
 to validate the Pauli engine on gates containing Y (e.g. ZY gates).
 
 Bit convention: qubit q <-> bit q of the basis index k (little-endian), MATCHING
-bpfree/pauli.py (mask bit q = 1<<q). (This differs from qaoa.py's big-endian core;
+gauge_engine/pauli.py (mask bit q = 1<<q). (This differs from qaoa.py's big-endian core;
 the two are never mixed.)
 """
 from __future__ import annotations

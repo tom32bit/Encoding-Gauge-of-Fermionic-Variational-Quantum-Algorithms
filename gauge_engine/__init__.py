@@ -1,4 +1,4 @@
-"""bpfree (engine subset) — numpy-only classical-simulation primitives used by the
+"""gauge_engine (engine subset) — numpy-only classical-simulation primitives used by the
 encoding-gauge study.
 
 Only the two modules required by the gauge code are included here:

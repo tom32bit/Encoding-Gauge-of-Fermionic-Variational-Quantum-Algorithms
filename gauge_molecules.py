@@ -15,8 +15,8 @@ import openfermion as of
 from openfermion import FermionOperator, get_fermion_operator
 from gauge_micro import encode, dla_dim, two_sre, dense, ENC
 from gauge_pipeline import qop_to_terms
-from bpfree.pauli import propagate_circuit, _popcount
-from bpfree.statevec import apply_rotation, _pauli_apply
+from gauge_engine.pauli import propagate_circuit, _popcount
+from gauge_engine.statevec import apply_rotation, _pauli_apply
 
 DATA = os.path.join(os.path.dirname(of.__file__), "testing", "data")
 

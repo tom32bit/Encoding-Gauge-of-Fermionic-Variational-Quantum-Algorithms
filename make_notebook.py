@@ -20,7 +20,7 @@ _ofpatch()
 
 ENC = ["JW", "BK", "parity"]
 
-# ---- Pauli-propagation engine (bpfree/pauli.py, validated vs statevector to 1e-15) ----
+# ---- Pauli-propagation engine (gauge_engine/pauli.py, validated vs statevector to 1e-15) ----
 def _popcount(x): return int(x).bit_count()
 def _commute(xp, zp, xg, zg): return (_popcount(xp & zg) + _popcount(zp & xg)) % 2 == 0
 def _pmul(xp, zp, xg, zg):
@@ -53,7 +53,7 @@ def propagate_circuit(n, gates, obs_terms, w_max=None, delta=0.0):
         terms = _truncate(terms, w_max, delta)
     return _truncate(terms, w_max, delta)
 
-# ---- statevector ground truth (bpfree/statevec.py) ----
+# ---- statevector ground truth (gauge_engine/statevec.py) ----
 def _pauli_apply(state, x, z, n):
     k = np.arange(2 ** n); sign = np.ones(2 ** n); zz = z
     while zz:

@@ -11,7 +11,7 @@ import numpy as np
 from openfermion import FermionOperator
 from gauge_micro import encode, two_sre, dla_dim, dense, ENC
 from gauge_molecules import hf_index, qop_to_terms, circuit
-from bpfree.statevec import apply_rotation
+from gauge_engine.statevec import apply_rotation
 
 
 def interacting_gens(n):

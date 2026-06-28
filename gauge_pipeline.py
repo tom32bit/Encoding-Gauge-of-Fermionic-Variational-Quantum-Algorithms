@@ -14,7 +14,7 @@ acts non-trivially on |0>). Run: python gauge_pipeline.py
 import numpy as np
 from openfermion import FermionOperator
 from gauge_micro import encode, dla_dim, two_sre, dense
-from bpfree.pauli import propagate_circuit, expectation_zero
+from gauge_engine.pauli import propagate_circuit, expectation_zero
 
 ENC = ["JW", "BK", "parity"]
 
