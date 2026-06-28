@@ -5,12 +5,12 @@
 Reproducibility package — code, validation suite, figure generators, and logged
 outputs supporting the manuscript.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21011413.svg)](https://doi.org/10.5281/zenodo.21011413)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21014864.svg)](https://doi.org/10.5281/zenodo.21014864)
 
 > S.M. Yousuf Iqbal Tomal and Abdullah Al Shafin,
 > Department of Computer Science and Engineering, BRAC University, Dhaka, Bangladesh.
 
-**Archived release:** [https://doi.org/10.5281/zenodo.21011413](https://doi.org/10.5281/zenodo.21011413)
+**Archived release:** [https://doi.org/10.5281/zenodo.21014864](https://doi.org/10.5281/zenodo.21014864)
 
 Standard fermion-to-qubit encodings (Jordan–Wigner, Bravyi–Kitaev, the
 Bravyi–Kitaev tree, parity, ternary tree) are related by Clifford transformations,
