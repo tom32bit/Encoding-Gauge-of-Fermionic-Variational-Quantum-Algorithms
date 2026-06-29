@@ -1,6 +1,6 @@
 # The Encoding Gauge of Fermionic Variational Quantum Algorithms
 
-**Classical Simulability is Relative, Trainability is Invariant**
+**Classical Simulability is Encoding-Relative, Trainability is Invariant**
 
 Reproducibility package — code, validation suite, figure generators, and logged
 outputs supporting the manuscript.
