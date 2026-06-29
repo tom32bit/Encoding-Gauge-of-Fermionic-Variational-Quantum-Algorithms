@@ -270,7 +270,7 @@ PART_VAR = r'''
 # ============== PART 2: gradient-variance scaling -- gauge-invariant, follows 1/dim g ==============
 # Estimator: mean over the K most active gradient components of the variance over S random theta;
 # 95% confidence interval by percentile bootstrap (B resamples) over the S samples.
-layers, S, K, B = 2, 400, 8, 2000
+layers, S, K, B = 2, 300, 6, 2000
 print("invariance check (Var ratio JW/BK should be exactly 1):")
 for model in ("free", "interacting"):
     for n in (4, 6, 8):
@@ -316,7 +316,8 @@ dynamical-Lie-algebra dimension by a sparse Lie-closure over Pauli strings (no e
 giving the floor at scale. Part 2 measures the gradient variance, showing it is identical across
 encodings and follows the inverse-dimension law.
 """)
-code('!pip install -q openfermion joblib')
+code('print(">>> UPDATED NOTEBOOK (round 2): emits bootstrap-CI variance block + error-bar figure. <<<")\n'
+     '!pip install -q openfermion joblib')
 code(ENGINE)
 md("## Step 1 - certify the engine and the gradient invariance")
 code(VALIDATE)

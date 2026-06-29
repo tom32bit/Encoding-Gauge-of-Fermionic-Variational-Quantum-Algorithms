@@ -76,7 +76,7 @@ ax.legend(loc="upper left")
 fig.tight_layout(); fig.savefig(OUT + "fig_dla_scale.pdf"); fig.savefig(OUT + "fig_dla_scale.png", dpi=150); plt.close(fig)
 
 # ===================== Figure: variance dichotomy (with bootstrap error bars) =====================
-# Data: (n, Var, CI_low, CI_high), 95% percentile bootstrap CIs over S=400 random theta, K=8
+# Data: (n, Var, CI_low, CI_high), 95% percentile bootstrap CIs over S=300 random theta, K=6
 # components, B=2000 resamples. Produced by gauge_trainability_kaggle.ipynb (PART 2); paste the
 # printed "model n Var CI_low CI_high" block here. INTERIM below = local small-n run (free only);
 # replace with the full Kaggle output (free n=4..16, interacting n=4..12) to extend the range.
