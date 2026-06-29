@@ -75,15 +75,33 @@ ax.text(21.2, 33, r"$=n$", color=JW, fontsize=12)
 ax.legend(loc="upper left")
 fig.tight_layout(); fig.savefig(OUT + "fig_dla_scale.pdf"); fig.savefig(OUT + "fig_dla_scale.png", dpi=150); plt.close(fig)
 
-# ===================== Figure: variance dichotomy =====================
+# ===================== Figure: variance dichotomy (with bootstrap error bars) =====================
+# Data: (n, Var, CI_low, CI_high), 95% percentile bootstrap CIs over S=400 random theta, K=8
+# components, B=2000 resamples. Produced by gauge_trainability_kaggle.ipynb (PART 2); paste the
+# printed "model n Var CI_low CI_high" block here. INTERIM below = local small-n run (free only);
+# replace with the full Kaggle output (free n=4..16, interacting n=4..12) to extend the range.
+DATA_FREE = [
+    (4, 6.503919e-02, 6.054617e-02, 6.931200e-02),
+    (6, 1.952866e-02, 1.739924e-02, 2.166218e-02),
+    (8, 6.792264e-03, 5.622321e-03, 7.961276e-03),
+]
+DATA_INT = [
+    # (n, Var, CI_low, CI_high)  -- fill from the Kaggle run (interacting)
+]
+
+def _ebar(ax, data, **kw):
+    if not data:
+        return
+    a = np.array(data); n, v, lo, hi = a[:, 0], a[:, 1], a[:, 2], a[:, 3]
+    ax.errorbar(n, v, yerr=[v - lo, hi - v], capsize=3, **kw)
+
 fig, ax = plt.subplots(figsize=(5.7, 4.1))
-free_n = np.array([4, 6, 8, 10, 12, 14, 16])
-free = np.array([0.83, 1.46, 1.61, 1.28, 1.46, 1.44, 1.10]) / (free_n ** 2 - 1)
-int_n = np.array([4, 6, 8, 10, 12]); intv = np.array([0.054888717, 0.027732702, 0.018812638, 0.010254208, 0.008151615])
-C = float(np.mean(free * (free_n ** 2 - 1)))
-ax.semilogy(free_n, free, "o-", color=BK, label="free fermions (poly $\\dim\\mathfrak{g}$)")
-ax.semilogy(int_n, intv, "s-", color=JW, label="interacting (exp $\\dim\\mathfrak{g}$)")
-ax.semilogy(free_n, C / (free_n ** 2 - 1), "--", color=REF, lw=1.4, label=r"$\propto 1/\dim\mathfrak{g}$")
+_ebar(ax, DATA_FREE, fmt="o-", color=BK, label="free fermions (poly $\\dim\\mathfrak{g}$)")
+_ebar(ax, DATA_INT, fmt="s-", color=JW, label="interacting (exp $\\dim\\mathfrak{g}$)")
+fn = np.array([d[0] for d in DATA_FREE])
+C = float(np.mean([d[1] * (d[0] ** 2 - 1) for d in DATA_FREE]))
+ax.semilogy(fn, C / (fn ** 2 - 1), "--", color=REF, lw=1.4, label=r"$\propto 1/\dim\mathfrak{g}$")
+ax.set_yscale("log")
 ax.set_xlabel(r"system size $n$"); ax.set_ylabel(r"$\mathrm{Var}\,[\partial_\theta \langle O\rangle]$")
 ax.legend(loc="lower left")
 fig.tight_layout(); fig.savefig(OUT + "fig_variance.pdf"); fig.savefig(OUT + "fig_variance.png", dpi=150); plt.close(fig)

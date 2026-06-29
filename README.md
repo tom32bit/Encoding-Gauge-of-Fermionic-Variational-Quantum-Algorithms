@@ -66,7 +66,8 @@ python make_figs.py           # regenerates Figures 3, 5, 7 into figures/
 | **Table 1** (molecular instance) | `gauge_molecules.py` | H2 STO-3G and 6-31G, JW/BK/parity |
 | **Floor, both invariant routes (Section 5)** | `gauge_floor.py`, `gauge_magic_route.py` | Lie-algebra route + magic (Clifford-locus) route |
 | **Family that achieves the floor (Prop., Sec. 5)** | `gauge_floor_family.py` | H(λ): dim g = n²−1 at λ=0 (poly) vs 66, 918 at λ≠0 (grows far beyond n²−1 across the computed range); JW weight n vs BK < n; generic magic 1.65→2.66 — all three certificates fail at once for the instances we exhibit |
-| **Faithfulness / tapering boundary (Prop., Sec. 6)** | `gauge_tapering.py` | re-encoding preserves dim g (faithful); sector tapering drops it for the interacting ansatz (66→36, 918→400) but not the Gaussian one — the exact "iff faithful" boundary |
+| **Faithfulness / tapering boundary (Prop., Sec. 6)** | `gauge_tapering.py` | re-encoding preserves dim g & variance (faithful); the interacting DLA acts reducibly (full-Fock 918 vs sector 400), so tapering a *respected* symmetry is a variance no-op (ratio 1.0000), and trainability moves only for a symmetry-breaking reference (ratio ≈ 918/400) — the corrected explored-subspace boundary |
+| **Gradient variance with error bars (R4)** | `gauge_var_errorbars.py` | Var[∂L] with 95% bootstrap CIs and documented sample counts (S random θ); free vs interacting scaling |
 | **W\* flip window (operating point)** | `gauge_sweep.py` | shows the JW-hard / BK-simulable window on H2/6-31G |
 | **Gradient-variance scaling (Section 6, App. A)** | `gauge_var_scale.py`, `gauge_var_interacting.py` | Var·dim g constant for free fermions |
 | **DLA dimension at scale** | `gauge_dla_scale.py` | sparse Pauli Lie-closure, dim g = n²−1 to n = 24 |

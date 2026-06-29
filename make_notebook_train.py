@@ -198,15 +198,19 @@ def grad_component(enc, gens, n, b, obs, theta, k, eps=1e-4):
 
 def var_grad(args):
     _ofpatch()
-    model, enc, n, layers, S, K, seed = args
+    model, enc, n, layers, S, K, seed, B = args
     gens = (free_gens if model == "free" else interacting_gens)(n); ne = n // 2
     rng = np.random.default_rng(seed)
     b = hf_index(enc, n, ne); ob = qop_to_terms(encode(FermionOperator("0^ 0"), enc, n))
     gt = grad_vec(enc, gens, n, b, ob, sample_theta(len(gens), layers, rng))
     ks = [int(k) for k in np.argsort(-np.abs(gt))[:K]]
     thetas = [sample_theta(len(gens), layers, rng) for _ in range(S)]
-    per = [np.var([grad_component(enc, gens, n, b, ob, th, k) for th in thetas]) for k in ks]
-    return (model, enc, n, float(np.mean(per)))
+    Gm = np.array([[grad_component(enc, gens, n, b, ob, th, k) for k in ks] for th in thetas])  # (S,K)
+    point = float(np.mean(np.var(Gm, axis=0)))                        # mean over components of Var over S samples
+    brng = np.random.default_rng(987)                                 # 95% percentile bootstrap CI over the S samples
+    boots = [float(np.mean(np.var(Gm[brng.integers(0, S, S)], axis=0))) for _ in range(B)]
+    lo, hi = float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))
+    return (model, enc, n, point, lo, hi)
 
 def dla_point(args):
     _ofpatch()
@@ -264,30 +268,40 @@ plt.legend(); plt.tight_layout(); plt.savefig("fig_dla_scale.png", dpi=130); plt
 
 PART_VAR = r'''
 # ============== PART 2: gradient-variance scaling -- gauge-invariant, follows 1/dim g ==============
-layers, S, K = 2, 100, 12
+# Estimator: mean over the K most active gradient components of the variance over S random theta;
+# 95% confidence interval by percentile bootstrap (B resamples) over the S samples.
+layers, S, K, B = 2, 400, 8, 2000
 print("invariance check (Var ratio JW/BK should be exactly 1):")
 for model in ("free", "interacting"):
     for n in (4, 6, 8):
-        vj = var_grad((model, "JW", n, layers, S, K, 11))[3]
-        vb = var_grad((model, "BK", n, layers, S, K, 11))[3]
+        vj = var_grad((model, "JW", n, layers, S, K, 11, B))[3]
+        vb = var_grad((model, "BK", n, layers, S, K, 11, B))[3]
         print("  %-11s n=%d  ratio=%.6f" % (model, n, vj / vb))
 
 NF = [4, 6, 8, 10, 12, 14, 16]
 NI = [4, 6, 8, 10, 12]
-tasks = [("free", "JW", n, layers, S, K, 11) for n in NF] + [("interacting", "JW", n, layers, S, K, 11) for n in NI]
+tasks = [("free", "JW", n, layers, S, K, 11, B) for n in NF] + [("interacting", "JW", n, layers, S, K, 11, B) for n in NI]
 out = Parallel(n_jobs=-1)(delayed(var_grad)(t) for t in tasks)
-var = {(m, n): v for (m, e, n, v) in out}
+var = {(m, n): (v, lo, hi) for (m, e, n, v, lo, hi) in out}
 dg = dict((n, d) for (_, n, d) in Parallel(n_jobs=-1)(delayed(dla_point)(("free", n)) for n in NF))
 
+print("\n# S=%d random theta, K=%d components, B=%d bootstrap. Transcribe these into make_figs.py:" % (S, K, B))
+print("# model        n   Var          CI_low       CI_high")
+for m, ns in (("free", NF), ("interacting", NI)):
+    for n in ns:
+        v, lo, hi = var[(m, n)]; print("%-12s %-3d %.6e %.6e %.6e" % (m, n, v, lo, hi), flush=True)
+
+def yerr(ns, m): return np.array([[var[(m,n)][0]-var[(m,n)][1] for n in ns], [var[(m,n)][2]-var[(m,n)][0] for n in ns]])
 plt.figure(figsize=(6.2, 4))
-plt.semilogy(NF, [var[("free", n)] for n in NF], "o-", label="free fermions (dim $\\mathfrak{g}=n^2-1$, poly)")
-plt.semilogy(NI, [var[("interacting", n)] for n in NI], "s-", label="interacting (dim $\\mathfrak{g}$ exponential)")
-C = float(np.mean([var[("free", n)] * dg[n] for n in NF]))
+plt.errorbar(NF, [var[("free", n)][0] for n in NF], yerr=yerr(NF,"free"), fmt="o-", capsize=3, label="free fermions (dim $\\mathfrak{g}=n^2-1$, poly)")
+plt.errorbar(NI, [var[("interacting", n)][0] for n in NI], yerr=yerr(NI,"interacting"), fmt="s-", capsize=3, label="interacting (dim $\\mathfrak{g}$ exponential)")
+C = float(np.mean([var[("free", n)][0] * dg[n] for n in NF]))
 plt.semilogy(NF, [C / (n * n - 1) for n in NF], "k--", alpha=.6, label="$%.1f/(n^2-1)$ (the $1/\\dim\\mathfrak{g}$ law)" % C)
+plt.yscale("log")
 plt.xlabel("n (qubits / modes)"); plt.ylabel("Var[$\\partial_\\theta\\langle O\\rangle$]")
-plt.title("Trainability is gauge-invariant: Var[grad] identical across encodings,\nfollowing the $1/\\dim\\mathfrak{g}$ law (free poly, interacting collapses)")
+plt.title("Trainability is gauge-invariant: Var[grad] identical across encodings,\nfollowing the $1/\\dim\\mathfrak{g}$ law (95%% bootstrap CIs, S=%d)" % S)
 plt.legend(); plt.tight_layout(); plt.savefig("fig_variance.png", dpi=130); plt.show()
-print("\nfree-fermion Var*dim_g (constant => Var ~ 1/dim g):", ["%.2f" % (var[("free", n)] * dg[n]) for n in NF])
+print("\nfree-fermion Var*dim_g (constant => Var ~ 1/dim g):", ["%.2f" % (var[("free", n)][0] * dg[n]) for n in NF])
 '''
 
 cells = []
