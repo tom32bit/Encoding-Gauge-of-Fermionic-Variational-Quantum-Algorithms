@@ -270,7 +270,7 @@ PART_VAR = r'''
 # ============== PART 2: gradient-variance scaling -- gauge-invariant, follows 1/dim g ==============
 # Estimator: mean over the K most active gradient components of the variance over S random theta;
 # 95% confidence interval by percentile bootstrap (B resamples) over the S samples.
-layers, S, K, B = 2, 300, 6, 2000
+layers, S, K, B = 2, 400, 8, 2000
 print("invariance check (Var ratio JW/BK should be exactly 1):")
 for model in ("free", "interacting"):
     for n in (4, 6, 8):

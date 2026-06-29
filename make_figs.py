@@ -76,17 +76,23 @@ ax.legend(loc="upper left")
 fig.tight_layout(); fig.savefig(OUT + "fig_dla_scale.pdf"); fig.savefig(OUT + "fig_dla_scale.png", dpi=150); plt.close(fig)
 
 # ===================== Figure: variance dichotomy (with bootstrap error bars) =====================
-# Data: (n, Var, CI_low, CI_high), 95% percentile bootstrap CIs over S=300 random theta, K=6
-# components, B=2000 resamples. Produced by gauge_trainability_kaggle.ipynb (PART 2); paste the
-# printed "model n Var CI_low CI_high" block here. INTERIM below = local small-n run (free only);
-# replace with the full Kaggle output (free n=4..16, interacting n=4..12) to extend the range.
+# Data: (n, Var, CI_low, CI_high), 95% percentile bootstrap CIs over S=400 random theta, K=8
+# components, B=2000 resamples. From gauge_trainability_kaggle.ipynb (PART 2), Kaggle run.
 DATA_FREE = [
-    (4, 6.503919e-02, 6.054617e-02, 6.931200e-02),
-    (6, 1.952866e-02, 1.739924e-02, 2.166218e-02),
-    (8, 6.792264e-03, 5.622321e-03, 7.961276e-03),
+    (4,  8.080535e-02, 7.668302e-02, 8.475552e-02),
+    (6,  4.989907e-02, 4.641236e-02, 5.309594e-02),
+    (8,  2.638157e-02, 2.381831e-02, 2.895198e-02),
+    (10, 1.495768e-02, 1.315828e-02, 1.662409e-02),
+    (12, 1.298858e-02, 1.127603e-02, 1.482174e-02),
+    (14, 8.127251e-03, 7.078172e-03, 9.220638e-03),
+    (16, 3.087136e-03, 2.518115e-03, 3.707460e-03),
 ]
 DATA_INT = [
-    # (n, Var, CI_low, CI_high)  -- fill from the Kaggle run (interacting)
+    (4,  6.136314e-02, 5.750889e-02, 6.492151e-02),
+    (6,  3.434880e-02, 3.136316e-02, 3.697462e-02),
+    (8,  1.799718e-02, 1.629399e-02, 1.955685e-02),
+    (10, 6.657901e-03, 5.787198e-03, 7.558043e-03),
+    (12, 7.764406e-03, 6.969959e-03, 8.575180e-03),
 ]
 
 def _ebar(ax, data, **kw):
