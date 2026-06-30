@@ -1,0 +1,52 @@
+7.2s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.2s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.2s 3 0.00s - to python to disable frozen modules.
+7.2s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.9s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.9s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.9s 7 0.00s - to python to disable frozen modules.
+7.9s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+9.1s 9 >>> LiH chemistry flip test <<<
+13.0s 10 [?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/44.7 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.3/44.7 MB[0m [31m8.7 MB/s[0m eta [36m0:00:06[0m[2K   [91m━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.3/44.7 MB[0m [31m33.8 MB/s[0m eta [36m0:00:02[0m[2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m8.3/44.7 MB[0m [31m79.9 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m13.8/44.7 MB[0m [31m175.3 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━[0m [32m20.0/44.7 MB[0m [31m176.2 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━[0m [32m25.2/44.7 MB[0m [31m163.7 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━[0m [32m31.4/44.7 MB[0m [31m180.5 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━[0m [32m35.9/44.7 MB[0m [31m153.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━[0m [32m41.9/44.7 MB[0m [31m162.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m162.4 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m162.4 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m162.4 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m162.4 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m44.7/44.7 MB[0m [31m162.4 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m44.7/44.7 MB[0m [31m39.9 MB/s[0m eta [36m0:00:00[0m
+13.1s 11 [?25h[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/2.0 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m2.0/2.0 MB[0m [31m231.0 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.0/2.0 MB[0m [31m55.8 MB/s[0m eta [36m0:00:00[0m
+24.9s 12 [?25hengine loaded. CPU cores available: 4
+25.3s 13 [PASS] isospectral
+25.3s 14 [PASS] HF energy == mol.hf_energy (-1.117349)
+25.3s 15 [PASS] engine == statevector
+25.3s 16 [PASS] DLA == L^2
+25.3s 17 [PASS] SRE T-state == log2(4/3)
+25.3s 18 [PASS] weight covariant JW>BK
+25.3s 19 
+25.3s 20 >>> all 6 checks PASSED: engine is correct on this machine.
+25.3s 21 
+25.5s 22 LiH/STO-3G: n=12 qubits, 4 electrons, 200 UCCSD generators, threshold=7.17 (verdict at W=7), eps=0.05
+25.8s 23 [HF check JW     ] <HF|H|HF>=-7.862568  stored=-7.862568  |err|=4.3e-13
+26.0s 24 [HF check BK     ] <HF|H|HF>=-7.862568  stored=-7.862568  |err|=4.3e-13
+27.3s 25 [HF check parity ] <HF|H|HF>=-7.862568  stored=-7.862568  |err|=4.3e-13
+13142.8s 26 
+13142.8s 27 sweep done in 13116 s
+13142.8s 28 
+13142.8s 29 amp   seed | <O> spread | JW err  verdict | BK err  verdict | par err verdict | FLIP?
+13142.8s 30 0.50  100  | 4.4e-16   | 0.0251 sim  | 0.0699 HARD | 0.0473 sim  |
+13142.8s 31 0.50  200  | 1.8e-15   | 0.0899 HARD | 0.1065 HARD | 0.0997 HARD |
+13142.8s 32 0.70  100  | 1.1e-15   | 0.1310 HARD | 0.1572 HARD | 0.1505 HARD |
+13142.8s 33 0.70  200  | 1.2e-15   | 0.0500 HARD | 0.0739 HARD | 0.0660 HARD |
+13142.8s 34 0.90  100  | 8.9e-16   | 0.0656 HARD | 0.0565 HARD | 0.0553 HARD |
+13142.8s 35 0.90  200  | 5.6e-16   | 0.0970 HARD | 0.0808 HARD | 0.0846 HARD |
+13142.8s 36 1.10  100  | 2.8e-16   | 0.1628 HARD | 0.1626 HARD | 0.1579 HARD |
+13142.8s 37 1.10  200  | 4.4e-16   | 0.0969 HARD | 0.0894 HARD | 0.0912 HARD |
+13142.8s 38 1.30  100  | 2.2e-16   | 0.0242 sim  | 0.0273 sim  | 0.0201 sim  |
+13142.8s 39 1.30  200  | 1.0e-15   | 0.0494 sim  | 0.0458 sim  | 0.0476 sim  |
+13142.8s 40 
+13142.8s 41 flip points: 0 / 10 (JW HARD, BK simulable, <O> invariant). Threshold fixed at 2 log2 n.
+13142.8s 42 
+13142.8s 43 => A flip here is a real molecular instance where the simulability verdict is encoding-relative;
+13142.8s 44 no flip => the H2/LiH molecular data remain an invariance check, as the paper already states.
+13147.6s 45 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+13147.6s 46 cells[i][c] = re.sub('\\\\\|', '|', cell)
+13147.8s 47 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+13147.8s 48 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+13148.4s 49 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+13148.7s 50 [NbConvertApp] Writing 26916 bytes to __notebook__.ipynb
+13151.2s 51 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+13152.2s 52 [NbConvertApp] Writing 386609 bytes to __results__.html

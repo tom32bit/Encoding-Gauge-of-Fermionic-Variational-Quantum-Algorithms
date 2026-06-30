@@ -2,7 +2,7 @@
 
 **Classical Simulability is Encoding-Relative, Trainability is Invariant**
 
-Reproducibility package — code, validation suite, figure generators, and logged
+Reproducibility package: code, validation suite, figure generators, and logged
 outputs supporting the manuscript.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21014864.svg)](https://doi.org/10.5281/zenodo.21014864)
@@ -18,8 +18,8 @@ so they form a **gauge group** acting on the classical-simulability problem. Thi
 code demonstrates the central split: the **Pauli weight** and **causal-cone width**
 are gauge-*covariant* (re-encoding can lower them exponentially), while the
 **dynamical-Lie-algebra dimension** and the **non-stabilizerness (magic)** are
-gauge-*invariant*. Trainability — the cost landscape, the gradient, and the
-barren-plateau variance — is gauge-invariant to machine precision.
+gauge-*invariant*. Trainability, meaning the cost landscape, the gradient, and the
+barren-plateau variance, is gauge-invariant to machine precision.
 
 Every quantity reported in the paper is checked against an independent ground truth
 (exact statevector simulation, closed-form Lie-algebra dimensions, analytic magic
@@ -54,7 +54,7 @@ python make_figs.py           # regenerates Figures 3, 5, 7 into figures/
 
 | Paper item | Script | Notes |
 |---|---|---|
-| **Validation (Section 3)** | `validate_gauge.py` | isospectrality, HF energy, engine == statevector, DLA == u(L), analytic magic, weight covariance — 9 checks |
+| **Validation (Section 3)** | `validate_gauge.py` | isospectrality, HF energy, engine == statevector, DLA == u(L), analytic magic, weight covariance (9 checks) |
 | **Fig. 1** (encoding-gauge schematic) | `make_schematic.py` | conceptual diagram |
 | **Fig. 2** (origin of covariance) | `make_mechanism_fig.py` | chain vs. tree; causal cones |
 | **Fig. 3(a)** (Pauli weight: JW linear, BK log) | `make_figs.py` | computed live to n = 30 |
@@ -63,10 +63,11 @@ python make_figs.py           # regenerates Figures 3, 5, 7 into figures/
 | **Fig. 5** (Lie-algebra route at scale) | `make_figs.py` | dim g = n²−1 vs. JW weight |
 | **Fig. 6** (cost is encoding-invariant) | `make_commute_fig.py` | \*-isomorphism commutative diagram |
 | **Fig. 7** (trainability is gauge-invariant) | `make_figs.py` | Var ∝ 1/dim g; data in `outputs/gauge_trainability_log.txt` |
-| **Table 1** (molecular instance) | `gauge_molecules.py` | H2 STO-3G and 6-31G, JW/BK/parity |
+| **Molecular instance (Section 4)** | `gauge_molecules.py` | H2 STO-3G and 6-31G, JW/BK/parity |
+| **Condensed-matter instance (Section 4)** | `gauge_hubbard.py` | 1D Fermi-Hubbard: dim g (24, 343) and magic invariant across JW/BK/parity, cross-validated dense vs sparse; weight bounded (local model), Bravyi-Kitaev not smaller than Jordan-Wigner |
 | **Floor, both invariant routes (Section 5)** | `gauge_floor.py`, `gauge_magic_route.py` | Lie-algebra route + magic (Clifford-locus) route |
-| **Family that achieves the floor (Prop., Sec. 5)** | `gauge_floor_family.py` | H(λ): dim g = n²−1 at λ=0 (poly) vs 66, 918 at λ≠0 (grows far beyond n²−1 across the computed range); JW weight n vs BK < n; generic magic 1.65→2.66 — all three certificates fail at once for the instances we exhibit |
-| **Faithfulness / tapering boundary (Prop., Sec. 6)** | `gauge_tapering.py` | re-encoding preserves dim g & variance (faithful); the interacting DLA acts reducibly (full-Fock 918 vs sector 400), so tapering a *respected* symmetry is a variance no-op (ratio 1.0000), and trainability moves only for a symmetry-breaking reference (ratio ≈ 918/400) — the corrected explored-subspace boundary |
+| **Family that achieves the floor (Prop., Sec. 5)** | `gauge_floor_family.py` | H(λ): dim g = n²−1 at λ=0 (poly) vs 66, 918 at λ≠0 (grows far beyond n²−1 across the computed range); JW weight n vs BK < n; generic magic 1.65→2.66; all three certificates fail at once for the instances we exhibit |
+| **Faithfulness / tapering boundary (Prop., Sec. 6)** | `gauge_tapering.py` | re-encoding preserves dim g & variance (faithful); the interacting DLA acts reducibly (full-Fock 918 vs sector 400), so tapering a *respected* symmetry is a variance no-op (ratio 1.0000), and trainability moves only for a symmetry-breaking reference (ratio ≈ 918/400); the corrected explored-subspace boundary |
 | **Gradient variance with error bars (R4)** | `gauge_var_errorbars.py` | Var[∂L] with 95% bootstrap CIs and documented sample counts (S random θ); free vs interacting scaling |
 | **W\* flip window (operating point)** | `gauge_sweep.py` | shows the JW-hard / BK-simulable window on H2/6-31G |
 | **Gradient-variance scaling (Section 6, App. A)** | `gauge_var_scale.py`, `gauge_var_interacting.py` | Var·dim g constant for free fermions |
@@ -81,7 +82,7 @@ python make_figs.py           # regenerates Figures 3, 5, 7 into figures/
 | `gauge_molecules.py` | molecular Hamiltonians, per-encoding Hartree–Fock reference, circuit-level W\* |
 | `gauge_trainability.py` | gradients and the barren-plateau variance diagnostic |
 | `gauge_dla_scale.py` | sparse Lie-closure over Pauli strings |
-| `gauge_engine/pauli.py` | truncated Pauli (Heisenberg) propagation — the weight-controlled simulator |
+| `gauge_engine/pauli.py` | truncated Pauli (Heisenberg) propagation, the weight-controlled simulator |
 | `gauge_engine/statevec.py` | exact statevector reference (independent ground truth) |
 
 ### Heavy / asymptotic runs (Kaggle)
@@ -94,6 +95,7 @@ emitted:
 |---|---|---|
 | `notebooks/gauge_scaling_kaggle.ipynb` | `make_notebook.py` | `outputs/gauge_scaling_log.txt` |
 | `notebooks/gauge_trainability_kaggle.ipynb` | `make_notebook_train.py` | `outputs/gauge_trainability_log.txt` |
+| `notebooks/lih_chemistry_kaggle.ipynb` | `make_lih_notebook.py` | LiH/STO-3G (n=12) UCCSD: ⟨O⟩ invariant to 1e-15, operating-point sweep; no directional W\* flip at this size (honest boundary) |
 
 The notebooks are self-validating: they re-run the same independent-ground-truth
 checks before producing any scaling data.
